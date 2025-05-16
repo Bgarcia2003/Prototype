@@ -1,174 +1,85 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Your Name | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>Your Name</h1>
+      <nav>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-body, input, textarea, button {
-  font-family: 'Segoe UI', sans-serif;
-}
+  <main>
+    <section id="home" class="hero">
+      <div class="container">
+        <h2>Hello, I'm Bryan Garcia Diaz</h2>
+        <p>Graphic Designer • Video Editor • Multimedia Designer</p>
+        <a href="#projects" class="btn">View My Work</a>
+      </div>
+    </section>
 
-body {
-  background: #f8f9fa;
-  color: #121212;
-  line-height: 1.6;
-}
+    <section id="projects" class="section">
+      <div class="container">
+        <h2>Projects</h2>
+        <div class="project-grid">
+          <div class="project-card">
+            <h3>Branding Project</h3>
+            <p>A visual identity package for a small business.</p>
+          </div>
+          <div class="project-card">
+            <h3>Video Edit</h3>
+            <p>Promotional video edited using Premiere Pro and After Effects.</p>
+          </div>
+          <div class="project-card">
+            <h3>Web Design</h3>
+            <p>Responsive website for a creative agency.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-.container {
-  max-width: 1100px;
-  margin: auto;
-  padding: 1rem;
-}
+    <section id="about" class="section alt">
+      <div class="container">
+        <h2>About Me</h2>
+        <p>
+          I'm a passionate creative with experience in graphic design, video editing, and front-end web development.
+          I bring ideas to life through thoughtful design, storytelling, and clean code.
+        </p>
+      </div>
+    </section>
 
-header {
-  background: white;
-  border-bottom: 1px solid #ddd;
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  padding: 1rem 0;
-}
+    <section id="contact" class="section">
+      <div class="container">
+        <h2>Contact Me</h2>
+        <form id="contactForm">
+          <input type="text" placeholder="Your Name" required />
+          <input type="email" placeholder="Your Email" required />
+          <textarea placeholder="Your Message" required></textarea>
+          <button type="submit" class="btn">Send Message</button>
+        </form>
+        <p id="formMsg"></p>
+      </div>
+    </section>
+  </main>
 
-header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Your Name. Portfolio built with HTML, CSS, and JS.</p>
+    </div>
+  </footer>
 
-header h1 {
-  font-size: 1.5rem;
-}
-
-header nav ul {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-}
-
-header nav a {
-  text-decoration: none;
-  color: #121212;
-  font-weight: bold;
-}
-
-header nav a:hover {
-  color: #0077ff;
-}
-
-.hero {
-  background: #0077ff;
-  color: white;
-  text-align: center;
-  padding: 4rem 1rem;
-}
-
-.hero h2 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.hero p {
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
-}
-
-.section {
-  padding: 3rem 1rem;
-}
-
-.alt {
-  background: #f0f0f0;
-}
-
-.section h2 {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.project-grid {
-  display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-.project-card {
-  background: white;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease;
-}
-
-.project-card:hover {
-  transform: translateY(-5px);
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  max-width: 500px;
-  margin: auto;
-}
-
-input, textarea {
-  padding: 0.75rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
-}
-
-textarea {
-  height: 150px;
-  resize: vertical;
-}
-
-.btn {
-  background: #0077ff;
-  color: white;
-  border: none;
-  padding: 0.75rem 1.25rem;
-  font-size: 1rem;
-  font-weight: bold;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-.btn:hover {
-  background: #005fcc;
-}
-
-#formMsg {
-  text-align: center;
-  margin-top: 1rem;
-  color: green;
-  font-weight: bold;
-}
-
-footer {
-  background: #222;
-  color: #aaa;
-  text-align: center;
-  padding: 1rem 0;
-  font-size: 0.9rem;
-  margin-top: 2rem;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  header nav ul {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    padding-top: 1rem;
-  }
-
-  .hero h2 {
-    font-size: 2rem;
-  }
-
-  .project-grid {
-    grid-template-columns: 1fr;
-  }
-}
+  <script src="script.js"></script>
+</body>
+</html>
